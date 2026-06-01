@@ -74,16 +74,16 @@ export function themesDir(): string {
 
 export function mihomoIpcPath(): string {
   if (process.platform === 'win32') {
-    return '\\\\.\\pipe\\Sparkle\\mihomo'
+    return '\\\\.\\pipe\\Blank\\mihomo'
   }
   const { core = 'mihomo' } = getAppConfigSync()
   if (core === 'system') {
-    return '/tmp/sparkle-mihomo-external.sock'
+    return '/tmp/blank-mihomo-external.sock'
   }
   if (!checkCorePermissionPathSync(mihomoCorePath(core))) {
-    return '/tmp/sparkle-mihomo-api-noperm.sock'
+    return '/tmp/blank-mihomo-api-noperm.sock'
   }
-  return '/tmp/sparkle-mihomo-api.sock'
+  return '/tmp/blank-mihomo-api.sock'
 }
 
 export function serviceIpcPath(): string {

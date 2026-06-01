@@ -10,7 +10,7 @@ interface DeepLinkContext {
 }
 
 export async function handleDeepLink(url: string, context: DeepLinkContext): Promise<void> {
-  if (!url.startsWith('clash://') && !url.startsWith('mihomo://') && !url.startsWith('sparkle://'))
+  if (!url.startsWith('clash://') && !url.startsWith('mihomo://') && !url.startsWith('blank://'))
     return
 
   const urlObj = new URL(url)

@@ -91,10 +91,10 @@ export async function downloadAndInstallUpdate(version: string): Promise<void> {
   }
   const baseUrl = `https://github.com/xishang0128/sparkle/releases/download/${releaseTag}/`
   const fileMap: Record<string, string> = {
-    'win32-x64': `sparkle-windows-${version}-x64-setup.exe`,
-    'win32-arm64': `sparkle-windows-${version}-arm64-setup.exe`,
-    'darwin-x64': `sparkle-macos-${version}-x64.pkg`,
-    'darwin-arm64': `sparkle-macos-${version}-arm64.pkg`
+    'win32-x64': `blank-windows-${version}-x64-setup.exe`,
+    'win32-arm64': `blank-windows-${version}-arm64-setup.exe`,
+    'darwin-x64': `blank-macos-${version}-x64.pkg`,
+    'darwin-arm64': `blank-macos-${version}-arm64.pkg`
   }
   let file = fileMap[`${process.platform}-${process.arch}`]
   if (isPortable()) {

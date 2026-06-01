@@ -71,7 +71,7 @@ async function getS3BackupConfig(): Promise<S3BackupConfig> {
     s3AccessKeyId = '',
     s3SecretAccessKey = '',
     s3Bucket = '',
-    s3Prefix = 'sparkle',
+    s3Prefix = 'blank',
     s3ForcePathStyle = true
   } = await getAppConfig()
 
@@ -126,7 +126,7 @@ export async function webdavBackup(): Promise<boolean> {
     webdavUrl = '',
     webdavUsername = '',
     webdavPassword = '',
-    webdavDir = 'sparkle'
+    webdavDir = 'blank'
   } = await getAppConfig()
   const zip = createBackupZip()
   const zipFileName = createBackupFilename()
@@ -150,7 +150,7 @@ export async function webdavRestore(filename: string): Promise<void> {
     webdavUrl = '',
     webdavUsername = '',
     webdavPassword = '',
-    webdavDir = 'sparkle'
+    webdavDir = 'blank'
   } = await getAppConfig()
 
   const client = createClient(webdavUrl, {
@@ -167,7 +167,7 @@ export async function listWebdavBackups(): Promise<string[]> {
     webdavUrl = '',
     webdavUsername = '',
     webdavPassword = '',
-    webdavDir = 'sparkle'
+    webdavDir = 'blank'
   } = await getAppConfig()
 
   const client = createClient(webdavUrl, {
@@ -184,7 +184,7 @@ export async function webdavDelete(filename: string): Promise<void> {
     webdavUrl = '',
     webdavUsername = '',
     webdavPassword = '',
-    webdavDir = 'sparkle'
+    webdavDir = 'blank'
   } = await getAppConfig()
 
   const client = createClient(webdavUrl, {

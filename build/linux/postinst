@@ -2,27 +2,27 @@
 
 if type update-alternatives 2>/dev/null >&1; then
     # Remove previous link if it doesn't use update-alternatives
-    if [ -L '/usr/bin/sparkle' -a -e '/usr/bin/sparkle' -a "`readlink '/usr/bin/sparkle'`" != '/etc/alternatives/sparkle' ]; then
-        rm -f '/usr/bin/sparkle'
+    if [ -L '/usr/bin/blank' -a -e '/usr/bin/blank' -a "`readlink '/usr/bin/blank'`" != '/etc/alternatives/blank' ]; then
+        rm -f '/usr/bin/blank'
     fi
-    update-alternatives --install '/usr/bin/sparkle' 'sparkle' '/opt/sparkle/sparkle' 100 || ln -sf '/opt/sparkle/sparkle' '/usr/bin/sparkle'
+    update-alternatives --install '/usr/bin/blank' 'blank' '/opt/blank/blank' 100 || ln -sf '/opt/blank/blank' '/usr/bin/blank'
 else
-    ln -sf '/opt/sparkle/sparkle' '/usr/bin/sparkle'
+    ln -sf '/opt/blank/blank' '/usr/bin/blank'
 fi
 
-sed -i 's/Name=sparkle/Name=Sparkle/' '/usr/share/applications/sparkle.desktop'
+sed -i 's/Name=blank/Name=Blank/' '/usr/share/applications/blank.desktop'
 
-chmod 4755 '/opt/sparkle/chrome-sandbox' || true
-chmod +sx /opt/sparkle/resources/sidecar/mihomo
-chmod +sx /opt/sparkle/resources/sidecar/mihomo-alpha
+chmod 4755 '/opt/blank/chrome-sandbox' || true
+chmod +sx /opt/blank/resources/sidecar/mihomo
+chmod +sx /opt/blank/resources/sidecar/mihomo-alpha
 
-if [ -d '/opt/sparkle/resources/files/sub-store-frontend' ]; then
-    chmod -R go-w '/opt/sparkle/resources/files/sub-store-frontend' 2>/dev/null || true
+if [ -d '/opt/blank/resources/files/sub-store-frontend' ]; then
+    chmod -R go-w '/opt/blank/resources/files/sub-store-frontend' 2>/dev/null || true
 fi
 
 restore_sparkle_service_if_was_running() {
     SERVICE_NAME='SparkleService'
-    STATE_FILE='/run/sparkle/service-was-running'
+    STATE_FILE='/run/blank/service-was-running'
 
     if [ ! -f "$STATE_FILE" ]; then
         return

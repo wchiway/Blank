@@ -165,7 +165,7 @@ const ProfileSettingDrawer: React.FC<Props> = (props) => {
                         try {
                           const url = await getGistUrl()
                           if (url !== '') {
-                            await navigator.clipboard.writeText(`${url}/raw/sparkle.yaml`)
+                            await navigator.clipboard.writeText(`${url}/raw/blank.yaml`)
                           }
                         } catch (e) {
                           notify(e, { variant: 'danger' })

@@ -148,7 +148,7 @@ initAppQuitLifecycle({
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(async () => {
   // Set app user model id for windows
-  electronApp.setAppUserModelId('sparkle.app')
+  electronApp.setAppUserModelId('blank.app')
   let appConfig: AppConfig
   try {
     appConfig = await initPromise

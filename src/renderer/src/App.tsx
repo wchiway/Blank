@@ -343,7 +343,7 @@ const App: React.FC = () => {
     <div className={`w-full h-screen flex ${resizing ? 'cursor-ew-resize' : ''}`}>
       {showQuitConfirm && (
         <ConfirmModal
-          title="确定要退出 Sparkle 吗？"
+          title="确定要退出 Blank 吗？"
           description={
             <div>
               <p></p>
@@ -461,7 +461,7 @@ const App: React.FC = () => {
               className={`flex justify-between p-2 ${!useWindowFrame && platform === 'darwin' ? 'ml-16.5' : ''}`}
             >
               <div className="flex ml-1">
-                <h3 className="text-lg font-bold leading-8">Sparkle</h3>
+                <h3 className="text-lg font-bold leading-8">Blank</h3>
               </div>
               {latest && latest.version && (
                 <UpdaterButton

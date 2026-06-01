@@ -16,7 +16,7 @@ const S3Config: React.FC = () => {
     s3AccessKeyId = '',
     s3SecretAccessKey = '',
     s3Bucket = '',
-    s3Prefix = 'sparkle',
+    s3Prefix = 'blank',
     s3ForcePathStyle = true
   } = appConfig || {}
   const [backuping, setBackuping] = useState(false)
@@ -119,7 +119,7 @@ const S3Config: React.FC = () => {
             size="sm"
             className="w-[60%]"
             value={s3.s3Prefix}
-            placeholder="sparkle"
+            placeholder="blank"
             onValueChange={(v) => updateS3({ s3Prefix: v })}
           />
         </SettingItem>
