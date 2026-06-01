@@ -418,6 +418,22 @@ export async function webdavDelete(filename: string): Promise<void> {
   return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('webdavDelete', filename))
 }
 
+export async function s3Backup(): Promise<boolean> {
+  return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('s3Backup'))
+}
+
+export async function s3Restore(filename: string): Promise<void> {
+  return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('s3Restore', filename))
+}
+
+export async function listS3Backups(): Promise<string[]> {
+  return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('listS3Backups'))
+}
+
+export async function s3Delete(filename: string): Promise<void> {
+  return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('s3Delete', filename))
+}
+
 export async function setTitleBarOverlay(overlay: TitleBarOverlayOptions): Promise<void> {
   return ipcErrorWrapper(await window.electron.ipcRenderer.invoke('setTitleBarOverlay', overlay))
 }

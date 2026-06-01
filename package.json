@@ -26,6 +26,7 @@
     "build:linux": "electron-vite build && electron-builder --publish never --linux"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1057.0",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@heroui-v3/react": "npm:@heroui/react@3.0.4",

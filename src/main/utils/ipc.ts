@@ -106,7 +106,16 @@ import {
   getCurrentProfileStr,
   getOverrideProfileStr
 } from '../core/factory'
-import { listWebdavBackups, webdavBackup, webdavDelete, webdavRestore } from '../resolve/backup'
+import {
+  listS3Backups,
+  listWebdavBackups,
+  s3Backup,
+  s3Delete,
+  s3Restore,
+  webdavBackup,
+  webdavDelete,
+  webdavRestore
+} from '../resolve/backup'
 import { getInterfaces } from '../sys/interface'
 import {
   closeTrayIcon,
@@ -339,6 +348,10 @@ export function registerIpcMainHandlers(): void {
   ipcMain.handle('webdavRestore', (_e, filename) => ipcErrorWrapper(webdavRestore)(filename))
   ipcMain.handle('listWebdavBackups', ipcErrorWrapper(listWebdavBackups))
   ipcMain.handle('webdavDelete', (_e, filename) => ipcErrorWrapper(webdavDelete)(filename))
+  ipcMain.handle('s3Backup', ipcErrorWrapper(s3Backup))
+  ipcMain.handle('s3Restore', (_e, filename) => ipcErrorWrapper(s3Restore)(filename))
+  ipcMain.handle('listS3Backups', ipcErrorWrapper(listS3Backups))
+  ipcMain.handle('s3Delete', (_e, filename) => ipcErrorWrapper(s3Delete)(filename))
   ipcMain.handle('registerShortcut', (_e, oldShortcut, newShortcut, action) =>
     ipcErrorWrapper(registerShortcut)(oldShortcut, newShortcut, action)
   )

@@ -127,6 +127,13 @@ interface AppConfig {
   webdavDir?: string
   webdavUsername?: string
   webdavPassword?: string
+  s3Endpoint?: string
+  s3Region?: string
+  s3AccessKeyId?: string
+  s3SecretAccessKey?: string
+  s3Bucket?: string
+  s3Prefix?: string
+  s3ForcePathStyle?: boolean
   hosts: IHost[]
   showWindowShortcut?: string
   showFloatingWindowShortcut?: string
