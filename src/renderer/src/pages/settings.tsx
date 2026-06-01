@@ -3,6 +3,7 @@ import BasePage from '@renderer/components/base/base-page'
 // import { CgWebsite } from 'react-icons/cg'
 import { IoLogoGithub } from 'react-icons/io5'
 import WebdavConfig from '@renderer/components/settings/webdav-config'
+import S3Config from '@renderer/components/settings/s3-config'
 import GeneralConfig from '@renderer/components/settings/general-config'
 import AdvancedSettings from '@renderer/components/settings/advanced-settings'
 import Actions from '@renderer/components/settings/actions'
@@ -60,6 +61,7 @@ const Settings: React.FC = () => {
       <SubStoreConfig />
       <SiderConfig />
       <WebdavConfig />
+      <S3Config />
       <AdvancedSettings />
       <ShortcutConfig />
       <Actions />
