@@ -109,7 +109,9 @@ async function s3BodyToBuffer(body: unknown): Promise<Buffer> {
   if (body instanceof Uint8Array) return Buffer.from(body)
 
   if (typeof body === 'object' && body !== null && 'transformToByteArray' in body) {
-    const bytes = await (body as { transformToByteArray: () => Promise<Uint8Array> }).transformToByteArray()
+    const bytes = await (
+      body as { transformToByteArray: () => Promise<Uint8Array> }
+    ).transformToByteArray()
     return Buffer.from(bytes)
   }
 

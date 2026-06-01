@@ -812,7 +812,7 @@ function clearTailscaleAuthNotifications(name?: string): void {
     new Set(
       Array.from(notifiedCoreLogKeys).filter((key) =>
         key.startsWith(tailscaleAuthNotificationKeyPrefix)
-      ),
+      )
     )
   if (keys.size === 0) return
 

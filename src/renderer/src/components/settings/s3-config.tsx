@@ -86,7 +86,9 @@ const S3Config: React.FC = () => {
   }
   return (
     <>
-      {restoreOpen && <S3RestoreModal filenames={filenames} onClose={() => setRestoreOpen(false)} />}
+      {restoreOpen && (
+        <S3RestoreModal filenames={filenames} onClose={() => setRestoreOpen(false)} />
+      )}
       <SettingCard header="S3/R2 备份">
         <SettingItem compatKey="legacy" title="Endpoint" divider>
           <Input
