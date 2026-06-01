@@ -285,7 +285,7 @@ jobs:
           PAYLOAD=$(cat <<EOF
           {
             "stream": false,
-            "model": "gpt-5-mini",
+            "model": "deepseek-v4-flash",
             "messages": [
               {
                 "role": "system",
